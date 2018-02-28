@@ -897,22 +897,42 @@
 <!--            右侧浮动           -->
 <script>
     var suspension = document.querySelector('.house-price-time');
-    var    backTop = document.querySelector('.suspension-fr');
+    var    backTop = document.querySelector('.suspension-fr');  //取得回到顶部按钮
+    var      timer = null;
+    //回到顶部
+    backTop.onclick = function(){
+        //设置定时器
+        timer = setInterval(function(){
+            var   t = document.documentElement.scrollTop||document.body.scrollTop;
+            var speed =Math.floor(t/6);
+            document.documentElement.scrollTop = document.body.scrollTop =t-speed-1;
+            console.log(t-speed);
+            if(t == 0){
+                clearInterval(timer);
+            }
+        },30)
+
+    }
+
     //回到顶部显示和隐藏
     window.onscroll = function(){
+
+        //获取右侧滚轮距离顶部的距离
         var   t = document.documentElement.scrollTop||document.body.scrollTop;
-        var   b = document.documentElement.scrollHeight-t;
-        if(t >= 200){
+        if(t >= 200&&t<2180){
             backTop.style.display = 'block';
             suspension.style.position = 'fixed';
             suspension.style.top =0;
-            if(t>=2210){
-                suspension.style.position ='absolute';
-                suspension.style.top = 2210+'px';
+            suspension.style.left =903+'px';
         }else{
             backTop.style.display = 'none';
-            suspension.style.top =191+'px';
             suspension.style.position = 'static';
+        }
+        if(t>=2180){
+            backTop.style.display = 'block';
+            suspension.style.position ='absolute';
+            suspension.style.top = 2144+'px';
+            suspension.style.left = 0;
         }
 
     }
