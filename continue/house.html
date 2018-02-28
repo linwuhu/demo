@@ -906,6 +906,9 @@
             backTop.style.display = 'block';
             suspension.style.position = 'fixed';
             suspension.style.top =0;
+            if(t>=2210){
+                suspension.style.position ='absolute';
+                suspension.style.top = 2210+'px';
         }else{
             backTop.style.display = 'none';
             suspension.style.top =191+'px';
