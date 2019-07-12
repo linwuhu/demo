@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><script>// 动态为根元素设置字体大小
+              function init () {
+      　　　　　　// 获取屏幕宽度
+                var width = document.documentElement.clientWidth
+      　　　　　　// 设置根元素字体大小。此时为宽的10等分
+                document.documentElement.style.fontSize = width / 100 + 'px'
+              }
+
+　　　　 //首次加载应用，设置一次
+        init()
+        // 监听手机旋转的事件的时机，重新设置
+        window.addEventListener('orientationchange', init)
+        // 监听手机窗口变化，重新设置
+        window.addEventListener('resize', init)</script><style>body{
+        font: 12px/1 "Microsoft YaHei","微软雅黑","arial","tahoma","MicrosoftJhengHei";
+      }</style><title>index-vue</title><link href=./static/css/app.052ba6f9f03a39a22f26900d34dce34a.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.52a8c62dfc051a928026.js></script><script type=text/javascript src=./static/js/app.674eea0c35855c3f3b53.js></script></body></html>
